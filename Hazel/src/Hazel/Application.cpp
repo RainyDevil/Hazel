@@ -13,4 +13,5 @@ namespace Hazel {
 	{
 		while (true);
 	}
+
 }
