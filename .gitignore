@@ -1,3 +1,11 @@
 /bin
 /bin-int
 /.vs
+
+/Hazel/*.vcxproj
+/Hazel/*.vcxproj.filters
+/Hazel/*.vcxproj.user
+
+/Sandbox*.vcxproj
+/Sandbox*.vcxproj.filters
+/Sandbox*.vcxproj.user
