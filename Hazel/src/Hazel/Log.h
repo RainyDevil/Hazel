@@ -1,8 +1,9 @@
 #pragma once
 #include <memory>
+#include <stdio.h>
 #include "Core.h"
 #include "spdlog/spdlog.h"
-#include <stdio.h>
+
 namespace Hazel {
 	class HAZEL_DLL_API Log
 	{
