@@ -9,3 +9,5 @@
 /Sandbox/*.vcxproj
 /Sandbox/*.vcxproj.filters
 /Sandbox/*.vcxproj.user
+
+*.sln
