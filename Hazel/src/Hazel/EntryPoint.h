@@ -4,7 +4,8 @@ extern Hazel::Application* Hazel::CreateApplication();
 
 bool onResize(Hazel::Event& event)
 {
-	std::cout << event.ToString() << std::endl;
+	
+	std::cout <<  event  << std::endl;
 	return true;
 }
 int main(int argc, char** argv)
