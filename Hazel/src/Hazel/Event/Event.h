@@ -23,7 +23,11 @@ namespace Hazel
 		EventCategoryMouse = BIT(3),
 		EventCategoryMouseButton = BIT(4),
 	};
+#define EVENT_CLASS_TYPE(type)  static EventType GetStaticType() {return EventType::type;}\
+								virtual EventType GetEventType() const override {return GetStaticType();}\
+								virtual const char* GetName() const override { return #type;} \
 
+#define EVENT_CLASS_CATEGORY(category)    virtual int GetCategoryFlags() const override {return category;}
 	class Event
 	{
 	public:
@@ -41,6 +45,31 @@ namespace Hazel
 			return category & GetCategoryFlags();
 		}
 	};
+
+	class EventDispatcher
+	{
+	public:
+		EventDispatcher(Event& event) : m_event(event)
+		{
+
+		}
+		template<typename T, typename F>
+		bool Dispatcher(const F& func)
+		{
+			if (m_event.GetEventType() == T::GetStaticType())
+			{
+				m_event.isHandled |= func(static_cast<T&>(m_event));
+				return true;
+			}
+			return false;
+		}
+	private:
+		Event& m_event;
+	};
+	inline std::ostream& operator << (std::ostream os, const Event& e)
+	{
+		return os << e.ToString();
+	}
 }
 
 
