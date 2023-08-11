@@ -1,3 +1,6 @@
 [submodule "Hazel/vender/spdlog"]
 	path = Hazel/vender/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Hazel/vender/glfw"]
+	path = Hazel/vender/glfw
+	url = https://github.com/glfw/glfw.git
